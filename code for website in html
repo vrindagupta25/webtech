@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Brand</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="hero">
+            <h1>Welcome to Our Clothing Brand</h1>
+            <p>Discover the latest trends in fashion.</p>
+        </div>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <!-- Product items will be dynamically generated here -->
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are committed to providing high-quality clothing at affordable prices...</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@clothingbrand.com</p>
+        <p>Phone: 123-456-7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Clothing Brand. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript functionality for dynamically generating product items
+        document.addEventListener('DOMContentLoaded', function() {
+            const products = [
+                { name: "Product 1", image: "product1.jpg", price: "$20" },
+                { name: "Product 2", image: "product2.jpg", price: "$25" },
+                { name: "Product 3", image: "product3.jpg", price: "$30" }
+            ];
+
+            const productGrid = document.querySelector('.product-grid');
+            products.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.classList.add('product-item');
+                productItem.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.price}</p>
+                `;
+                productGrid.appendChild(productItem);
+            });
+        });
+    </script>
+</body>
+</html>
